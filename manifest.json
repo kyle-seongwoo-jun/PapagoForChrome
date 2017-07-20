@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
 
-  "name": "Papago in Chrome",
+  "name": "Papago for Chrome",
   "description": "This extension translates Korean to English or English to Korean via N2MT(Naver Neural Machine Translation.)",
   "version": "1.0",
 
@@ -9,8 +9,20 @@
     "default_icon": "icon.png",
     "default_popup": "popup.html"
   },
+
   "permissions": [
     "activeTab",
+    "contextMenus",
     "https://ajax.googleapis.com/"
-  ]
+  ],
+
+  "icons": {
+      "16": "icon-bitty.png",
+      "48": "icon-small.png",
+      "128": "icon-large.png"
+  },
+
+  "background": {
+    "scripts": ["jquery-3.1.1.js", "background.js"]
+  }
 }

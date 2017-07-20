@@ -116,3 +116,33 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+$(document).ready( function () {
+  console.log("hahaha");
+    $("#translate").on("submit", function () {
+        console.log("submit");
+        submit();
+    });
+});
+
+
+function submit() {
+    var queryString = $("#translate").serialize();
+
+    $.ajax({
+        type: 'post',
+        url: 'https://openapi.naver.com/v1/language/translate',
+        data: queryString,
+        dataType: 'json',
+        headers: {
+            "X-Naver-Client-Id": "3DghCqvpWc6dRyPgRt9M",
+            "X-Naver-Client-Secret": "mkpxT0GnTb"
+        },
+        error: function (xhr, status, error) {
+            alert(error);
+        },
+        success: function (json) {
+            alert(json)
+        },
+    });
+};
